@@ -1,5 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+/*
+    https://dev.to/kedar9/creating-a-node-app-with-react-webpack-4-babel-7-express-and-sass-3mae
+*/
 
 var express = require('express');
 var path = require('path');
