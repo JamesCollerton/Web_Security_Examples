@@ -1,0 +1,23 @@
+{
+  "name": "react_drag_and_drop",
+  "version": "1.0.0",
+  "description": "A small example application of using drag and drop in React",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesCollerton/React_Drag_and_Drop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesCollerton/React_Drag_and_Drop/issues"
+  },
+  "homepage": "https://github.com/JamesCollerton/React_Drag_and_Drop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
