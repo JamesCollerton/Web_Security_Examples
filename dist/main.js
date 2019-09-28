@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "774064308fe9a57f178c";
+/******/ 	var hotCurrentHash = "34110a046b47c10daca4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -32056,24 +32056,31 @@ if (true) {
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_Message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/Message */ "./src/js/Message.js");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/style.css */ "./src/css/style.css");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_js_Message__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('react-container') // eslint-disable-line no-undef
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Message = __webpack_require__(/*! ./js/Message */ "./src/js/Message.js");
+
+var _Message2 = _interopRequireDefault(_Message);
+
+__webpack_require__(/*! ./css/style.css */ "./src/css/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_Message2.default, null), document.getElementById('react-container') // eslint-disable-line no-undef
 ); // Needed for Hot Module Replacement
+
 
 if (typeof module.hot !== 'undefined') {
   // eslint-disable-line no-undef  
@@ -32086,24 +32093,31 @@ if (typeof module.hot !== 'undefined') {
 /*!***************************!*\
   !*** ./src/js/Message.js ***!
   \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Message = () => {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return _react2.default.createElement("div", {
     className: "content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Express and Webpack App"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, _react2.default.createElement("h1", null, "Express and Webpack App"), _react2.default.createElement("p", {
     className: "description"
   }, "Example application for using Express and Webpack."));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Message);
+exports.default = Message;
 
 /***/ }),
 
