@@ -6,18 +6,13 @@ At the moment this is just an outline application. The below explanation is quit
 
 ## Technologies Used
 
-- Babel - Backwards compatibility of ES6
-- Enzyme - React testing framework
-- ESLint - Linting the ES6
-- File Loader - Loads images for Web Pack
-- HTML Loader - Loads the HTML file we would like to inject the JS into for Web Pack
-- Jest - JavaScript testing framework
-- Mini CSS - Minimises CSS in the production compilation
-- Optimize CSS - Optimises CSS in the production compilation
-- Style Loader - 
-- Uglify JS - Optimises JS in the production compilation
-- URL Loader - Loads images into CSS and Javascript files
-- Webpack - Controls the compilation of the various files
+- [Babel](https://babeljs.io/) - Backwards compatibility of ES6
+- [Enzyme](https://airbnb.io/enzyme/) - React testing framework developed by AirBnB
+- [ESLint](https://eslint.org/) - Linting the ES6
+- [Jest](https://jestjs.io/) - JavaScript testing framework
+- [Mini CSS](https://minicss.org/) - Minimises CSS in the production compilation
+- [Uglify JS](https://www.npmjs.com/package/uglify-js) - Optimises JS in the production compilation
+- [Webpack](https://webpack.js.org/) - Controls the compilation of the various files
 
 ## Functionality Overview
 
