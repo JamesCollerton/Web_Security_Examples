@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "34110a046b47c10daca4";
+/******/ 	var hotCurrentHash = "46f359452113db418e30";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -32078,6 +32078,9 @@ __webpack_require__(/*! ./css/style.css */ "./src/css/style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+    This attaches to the HTML element 'react-container' and is used to inject the react into the page.
+*/
 _reactDom2.default.render(_react2.default.createElement(_Message2.default, null), document.getElementById('react-container') // eslint-disable-line no-undef
 ); // Needed for Hot Module Replacement
 

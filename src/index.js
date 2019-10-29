@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import Message from './js/Message'
 import './css/style.css'
 
+/*
+    This attaches to the HTML element 'react-container' and is used to inject the react into the page.
+*/
 ReactDOM.render(
     <Message />,
     document.getElementById('react-container') // eslint-disable-line no-undef
