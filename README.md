@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/JamesCollerton/React_Drag_and_Drop.svg?branch=master)](https://travis-ci.com/JamesCollerton/React_Drag_and_Drop)
+[![codecov](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop)
 
-
-# React Drag and Drop
+# Web Security Examples
 
 A small Node/ React application for drag and dropping images. Built using WebPack, Babel and Jest, linted with ESLint.
 
