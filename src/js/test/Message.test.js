@@ -1,5 +1,5 @@
 import React from 'react'
-import shallow from 'enzyme'
+import Enzyme, { shallow, mount, render } from 'enzyme'
 import Message from '../Message'
 
 describe('<Message />', () => {
