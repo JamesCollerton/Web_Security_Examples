@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/JamesCollerton/Web_Security_Examples.svg?branch=master)](https://travis-ci.com/JamesCollerton/Web_Security_Examples)
-[![codecov](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop)
+[![codecov](https://codecov.io/gh/JamesCollerton/Web_Security_Examples/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesCollerton/Web_Security_Examples)
 
 # Web Security Examples
 
