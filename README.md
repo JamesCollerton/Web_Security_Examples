@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.com/JamesCollerton/React_Drag_and_Drop.svg?branch=master)](https://travis-ci.com/JamesCollerton/React_Drag_and_Drop)
+[![Build Status](https://travis-ci.com/JamesCollerton/Web_Security_Examples.svg?branch=master)](https://travis-ci.com/JamesCollerton/Web_Security_Examples)
 [![codecov](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesCollerton/React_Drag_and_Drop)
 
 # Web Security Examples
 
-A small Node/ React application for drag and dropping images. Built using WebPack, Babel and Jest, linted with ESLint.
+A small Node/ React application for demonstrating various security vulnerabilities. Built using WebPack, Babel and Jest, linted with ESLint.
 
 At the moment this is just an outline application. The below explanation is quite basic, but it is useful for me who is not a front-end developer!
 
