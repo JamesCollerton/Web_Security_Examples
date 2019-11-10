@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Message from './js/Message'
+import App from './js/App'
 import './css/style.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +17,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
     This attaches to the HTML element 'react-container' and is used to inject the react into the page.
 */
 ReactDOM.render(
-    <Message />,
+    <App />,
     document.getElementById('react-container') // eslint-disable-line no-undef
 )
 

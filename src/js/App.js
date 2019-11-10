@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './NavBar'
 
-const Message = () => {
+const App = () => {
   return (
     <div className="content">
         <NavBar />
@@ -10,4 +10,4 @@ const Message = () => {
     </div>
   )
 }
-export default Message
+export default App
