@@ -3,8 +3,8 @@ import { shallow } from 'enzyme'
 import App from '../App'
 
 describe('<App />', () => {
-  test('renders a single <p> tag', () => {
+  test('contains a NavBar', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('p')).toHaveLength(1);
+    expect(wrapper.find('NavBar')).toHaveLength(1)
   });
 })

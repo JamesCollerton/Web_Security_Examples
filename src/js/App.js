@@ -5,8 +5,6 @@ const App = () => {
   return (
     <div className="content">
         <NavBar />
-        <h1>Express and Webpack App</h1>
-        <p className="description">Example application for using Express and Webpack.</p>
     </div>
   )
 }
