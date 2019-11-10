@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6663944cf34672e8309d";
+/******/ 	var hotCurrentHash = "80f8da48b18926203a9d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42847,9 +42847,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const App = () => {
   return _react2.default.createElement("div", {
     className: "content"
-  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement("h1", null, "Express and Webpack App"), _react2.default.createElement("p", {
-    className: "description"
-  }, "Example application for using Express and Webpack."));
+  }, _react2.default.createElement(_NavBar2.default, null));
 };
 
 exports.default = App;
