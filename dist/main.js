@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "80f8da48b18926203a9d";
+/******/ 	var hotCurrentHash = "6a7b74384481fc4b521b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42872,6 +42872,10 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Search = __webpack_require__(/*! ./Search */ "./src/js/Search.js");
+
+var _Search2 = _interopRequireDefault(_Search);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const NavBar = () => {
@@ -42880,7 +42884,7 @@ const NavBar = () => {
   }, _react2.default.createElement("a", {
     className: "navbar-brand",
     href: "#"
-  }, "Navbar"), _react2.default.createElement("button", {
+  }, "The Art Bazaar"), _react2.default.createElement("button", {
     className: "navbar-toggler",
     type: "button",
     "data-toggle": "collapse",
@@ -42893,52 +42897,38 @@ const NavBar = () => {
   })), _react2.default.createElement("div", {
     className: "collapse navbar-collapse",
     id: "navbarSupportedContent"
-  }, _react2.default.createElement("ul", {
-    className: "navbar-nav mr-auto"
-  }, _react2.default.createElement("li", {
-    className: "nav-item active"
-  }, _react2.default.createElement("a", {
-    className: "nav-link",
-    href: "#"
-  }, "Home ", _react2.default.createElement("span", {
-    className: "sr-only"
-  }, "(current)"))), _react2.default.createElement("li", {
-    className: "nav-item"
-  }, _react2.default.createElement("a", {
-    className: "nav-link",
-    href: "#"
-  }, "Link")), _react2.default.createElement("li", {
-    className: "nav-item dropdown"
-  }, _react2.default.createElement("a", {
-    className: "nav-link dropdown-toggle",
-    href: "#",
-    id: "navbarDropdown",
-    role: "button",
-    "data-toggle": "dropdown",
-    "aria-haspopup": "true",
-    "aria-expanded": "false"
-  }, "Dropdown"), _react2.default.createElement("div", {
-    className: "dropdown-menu",
-    "aria-labelledby": "navbarDropdown"
-  }, _react2.default.createElement("a", {
-    className: "dropdown-item",
-    href: "#"
-  }, "Action"), _react2.default.createElement("a", {
-    className: "dropdown-item",
-    href: "#"
-  }, "Another action"), _react2.default.createElement("div", {
-    className: "dropdown-divider"
-  }), _react2.default.createElement("a", {
-    className: "dropdown-item",
-    href: "#"
-  }, "Something else here"))), _react2.default.createElement("li", {
-    className: "nav-item"
-  }, _react2.default.createElement("a", {
-    className: "nav-link disabled",
-    href: "#"
-  }, "Disabled"))), _react2.default.createElement("form", {
-    className: "form-inline my-2 my-lg-0"
-  }, _react2.default.createElement("input", {
+  }, _react2.default.createElement("div", {
+    className: "form-inline my-2 my-lg-0 ml-auto"
+  }, _react2.default.createElement(_Search2.default, null))));
+};
+
+exports.default = NavBar;
+
+/***/ }),
+
+/***/ "./src/js/Search.js":
+/*!**************************!*\
+  !*** ./src/js/Search.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Search = () => {
+  // return <form className="form-inline my-2 my-lg-0 ml-auto">
+  return _react2.default.createElement("form", null, _react2.default.createElement("input", {
     className: "form-control mr-sm-2",
     type: "search",
     placeholder: "Search",
@@ -42946,10 +42936,10 @@ const NavBar = () => {
   }), _react2.default.createElement("button", {
     className: "btn btn-outline-success my-2 my-sm-0",
     type: "submit"
-  }, "Search"))));
+  }, "Search"));
 };
 
-exports.default = NavBar;
+exports.default = Search;
 
 /***/ }),
 
