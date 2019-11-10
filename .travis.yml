@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - 12.2.0
 script:
-    - ./node_modules/.bin/eslint src/js/*
+    - npm run lint
     - npm run buildDev
     - npm run buildProd
     - npm test
     - npm run coverage
-    - ./node_modules/.bin/codecov
+    - npm run codecov

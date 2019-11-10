@@ -6,6 +6,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
+    "lint": "./node_modules/.bin/eslint src/js/*",
+    "codecov": "./node_modules/.bin/codecov",
     "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "node ./dist/server.js"
@@ -31,7 +33,10 @@
   "homepage": "https://github.com/JamesCollerton/React_Drag_and_Drop#readme",
   "dependencies": {
     "@babel/runtime": "^7.6.2",
+    "bootstrap": "^4.3.1",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
