@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './js/App'
+import App from './js/components/App'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import './css/style.css'
+
+import './js/utils/logging'
 
 // TODO: May need these
 // import $ from 'jquery'; 
