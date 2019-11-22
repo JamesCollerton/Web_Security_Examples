@@ -7,8 +7,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import './css/style.css'
 
-import './js/utils/logging'
-
 // TODO: May need these
 // import $ from 'jquery'; 
 // import Popper from 'popper.js';

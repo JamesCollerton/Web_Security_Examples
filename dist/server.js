@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/util/logger.js":
+/*!*******************************!*\
+  !*** ./src/js/util/logger.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nconst winston = __webpack_require__(/*! winston */ \"winston\");\n\nconst logger = winston.createLogger({\n  transports: [new winston.transports.Console()]\n});\nmodule.exports = logger;\n\n//# sourceURL=webpack:///./src/js/util/logger.js?");
+
+/***/ }),
+
 /***/ "./src/server/server-dev.js":
 /*!**********************************!*\
   !*** ./src/server/server-dev.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _path = __webpack_require__(/*! path */ \"path\");\n\nvar _path2 = _interopRequireDefault(_path);\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _webpack = __webpack_require__(/*! webpack */ \"webpack\");\n\nvar _webpack2 = _interopRequireDefault(_webpack);\n\nvar _webpackDevMiddleware = __webpack_require__(/*! webpack-dev-middleware */ \"webpack-dev-middleware\");\n\nvar _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);\n\nvar _webpackHotMiddleware = __webpack_require__(/*! webpack-hot-middleware */ \"webpack-hot-middleware\");\n\nvar _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);\n\nvar _webpackDevConfig = __webpack_require__(/*! ../../webpack.dev.config.js */ \"./webpack.dev.config.js\");\n\nvar _webpackDevConfig2 = _interopRequireDefault(_webpackDevConfig);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst app = (0, _express2.default)(),\n      DIST_DIR = __dirname,\n      HTML_FILE = _path2.default.join(DIST_DIR, 'index.html'),\n      compiler = (0, _webpack2.default)(_webpackDevConfig2.default);\n\napp.use((0, _webpackDevMiddleware2.default)(compiler, {\n  publicPath: _webpackDevConfig2.default.output.publicPath\n}));\napp.use((0, _webpackHotMiddleware2.default)(compiler));\napp.get('*', (req, res, next) => {\n  compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {\n    if (err) {\n      return next(err);\n    }\n\n    res.set('content-type', 'text/html');\n    res.send(result);\n    res.end();\n  });\n});\nconst PORT = process.env.PORT || 3000;\napp.listen(PORT, () => {\n  console.log(`App listening to ${PORT}....`);\n  console.log('Press Ctrl+C to quit.');\n});\n\n//# sourceURL=webpack:///./src/server/server-dev.js?");
+eval("\n\nvar _path = __webpack_require__(/*! path */ \"path\");\n\nvar _path2 = _interopRequireDefault(_path);\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _webpack = __webpack_require__(/*! webpack */ \"webpack\");\n\nvar _webpack2 = _interopRequireDefault(_webpack);\n\nvar _webpackDevMiddleware = __webpack_require__(/*! webpack-dev-middleware */ \"webpack-dev-middleware\");\n\nvar _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);\n\nvar _webpackHotMiddleware = __webpack_require__(/*! webpack-hot-middleware */ \"webpack-hot-middleware\");\n\nvar _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);\n\nvar _webpackDevConfig = __webpack_require__(/*! ../../webpack.dev.config.js */ \"./webpack.dev.config.js\");\n\nvar _webpackDevConfig2 = _interopRequireDefault(_webpackDevConfig);\n\nvar _logger = __webpack_require__(/*! ../js/util/logger */ \"./src/js/util/logger.js\");\n\nvar _logger2 = _interopRequireDefault(_logger);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst app = (0, _express2.default)(),\n      DIST_DIR = __dirname,\n      HTML_FILE = _path2.default.join(DIST_DIR, 'index.html'),\n      compiler = (0, _webpack2.default)(_webpackDevConfig2.default);\n\napp.use((0, _webpackDevMiddleware2.default)(compiler, {\n  publicPath: _webpackDevConfig2.default.output.publicPath\n}));\napp.use((0, _webpackHotMiddleware2.default)(compiler));\napp.get('*', (req, res, next) => {\n  compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {\n    if (err) {\n      return next(err);\n    }\n\n    res.set('content-type', 'text/html');\n    res.send(result);\n    res.end();\n  });\n});\nconst PORT = process.env.PORT || 3000;\napp.listen(PORT, () => {\n  _logger2.default.info(`App listening to ${PORT}....`);\n\n  _logger2.default.info('Press Ctrl+C to quit.');\n});\n\n//# sourceURL=webpack:///./src/server/server-dev.js?");
 
 /***/ }),
 
@@ -173,6 +185,17 @@ eval("module.exports = require(\"webpack-dev-middleware\");\n\n//# sourceURL=web
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"webpack-hot-middleware\");\n\n//# sourceURL=webpack:///external_%22webpack-hot-middleware%22?");
+
+/***/ }),
+
+/***/ "winston":
+/*!**************************!*\
+  !*** external "winston" ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"winston\");\n\n//# sourceURL=webpack:///external_%22winston%22?");
 
 /***/ })
 
