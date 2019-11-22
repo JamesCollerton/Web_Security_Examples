@@ -19,12 +19,6 @@ class Search extends React.Component {
         event.preventDefault();
     }
 
-    // handleSubmit(event) {
-    //     alert(event.target.value); // eslint-disable-line no-undef
-    //     console.log(event)
-    //     event.preventDefault();
-    // }
-
     render() {
         return <form onSubmit={this.handleSubmit}>
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
