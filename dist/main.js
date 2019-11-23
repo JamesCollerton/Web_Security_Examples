@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7f806edfa851ceefebe8";
+/******/ 	var hotCurrentHash = "da642c2fad8f47195ea1";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42946,12 +42946,7 @@ class Search extends _react2.default.Component {
     alert('A name was submitted: ' + this.state.value); // eslint-disable-line no-undef
 
     event.preventDefault();
-  } // handleSubmit(event) {
-  //     alert(event.target.value); // eslint-disable-line no-undef
-  //     console.log(event)
-  //     event.preventDefault();
-  // }
-
+  }
 
   render() {
     return _react2.default.createElement("form", {

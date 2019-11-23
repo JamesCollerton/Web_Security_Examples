@@ -15,8 +15,10 @@ class Search extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value); // eslint-disable-line no-undef
-        event.preventDefault();
+        if(this.state.value == "alert('XSS attack!')"){
+            alert(this.state.value); // eslint-disable-line no-undef
+            event.preventDefault();
+        }
     }
 
     render() {
