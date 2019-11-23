@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconst winston = __webpack_require__(/*! winston */ \"winston\");\n\nconst logger = winston.createLogger({\n  transports: [new winston.transports.Console()]\n});\nmodule.exports = logger;\n\n//# sourceURL=webpack:///./src/js/util/logger.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nconst winston = __webpack_require__(/*! winston */ \"winston\");\n\nconst logger = winston.createLogger({\n  transports: [new winston.transports.Console()]\n});\nexports.default = logger;\n\n//# sourceURL=webpack:///./src/js/util/logger.js?");
 
 /***/ }),
 

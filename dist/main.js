@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "da642c2fad8f47195ea1";
+/******/ 	var hotCurrentHash = "de8114b0e93a90828cf6";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42943,9 +42943,11 @@ class Search extends _react2.default.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value); // eslint-disable-line no-undef
+    if (this.state.value == "alert('XSS attack!')") {
+      alert(this.state.value); // eslint-disable-line no-undef
 
-    event.preventDefault();
+      event.preventDefault();
+    }
   }
 
   render() {
