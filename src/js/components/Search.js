@@ -6,6 +6,8 @@ class Search extends React.Component {
         super(props);
         this.state = {value: ''};
     
+        // We need to bind these two in order to make them available to the React code in
+        // render
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -16,7 +18,7 @@ class Search extends React.Component {
 
     handleSubmit(event) {
         if(this.state.value == "alert('XSS attack!')"){
-            alert(this.state.value); // eslint-disable-line no-undef
+            window.alert(this.state.value); // eslint-disable-line no-undef
             event.preventDefault();
         }
     }
