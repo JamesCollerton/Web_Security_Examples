@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  localstack:
+    image: localstack/localstack
+    environment:
+      SERVICES: sqs, secretsmanager
+      DEBUG: 1
+      DEFAULT_REGION: eu-west-1
+    ports:
+      - "4567-4584:4567-4584"
+      - "8084:8080"
+
+  db:
+    image: mysql:5.7.12
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: moderation
