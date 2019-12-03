@@ -9,3 +9,7 @@ services:
     ports:
       - "4567-4584:4567-4584"
       - "8084:8080"
+  populater-image:
+    build: "./populater-image"
+    depends_on:
+      - localstack
