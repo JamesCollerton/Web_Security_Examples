@@ -17,7 +17,7 @@ class Search extends React.Component {
     }
 
     handleSubmit(event) {
-        if(this.state.value == "alert('XSS attack!')"){
+        if(this.state.value == "alert('XSS attack!')") {
             window.alert(this.state.value); // eslint-disable-line no-undef
             event.preventDefault();
         }

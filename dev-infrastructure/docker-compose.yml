@@ -13,4 +13,4 @@ services:
       - ./localstack-scripts/dynamodb.sh:/usr/local/bin/dynamodb.sh
       - ./localstack-volume:/localstack
     command:
-      - dynamodb.sh
+      - /usr/local/bin/dynamodb.sh
