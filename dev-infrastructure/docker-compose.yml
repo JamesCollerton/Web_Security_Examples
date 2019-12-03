@@ -9,8 +9,3 @@ services:
     ports:
       - "4567-4584:4567-4584"
       - "8084:8080"
-    volumes:
-      - ./localstack-scripts/dynamodb.sh:/usr/local/bin/dynamodb.sh
-      - ./localstack-volume:/localstack
-    command:
-      - /usr/local/bin/dynamodb.sh
