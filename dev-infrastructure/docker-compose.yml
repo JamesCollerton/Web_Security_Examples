@@ -1,6 +1,7 @@
 version: '3.6'
 services:
   localstack:
+    network_mode: host
     image: localstack/localstack
     environment:
       SERVICES: dynamodb
@@ -10,6 +11,7 @@ services:
       - "4567-4584:4567-4584"
       - "8084:8080"
   populater-image:
+    network_mode: host
     build: "./populater-image"
     depends_on:
       - localstack
