@@ -23,11 +23,29 @@ dynamodb.create_table(
             'KeyType': 'HASH'
         },
     ],
-    # TODO: Can probably revise these
+    # One read capacity unit represents one 4KB read per second
+    # One write capacity unit represents one 1KB write per second
     ProvisionedThroughput={
-        'ReadCapacityUnits': 123,
-        'WriteCapacityUnits': 123
+        'ReadCapacityUnits': 20,
+        'WriteCapacityUnits': 20
+    }
+)
+
+dynamodb.put_item(
+    TableName="Products",
+    Item={
+        "Id": {
+            "S": "1" 
+        }
     }
 )
 
 print(dynamodb.list_tables())
+print(dynamodb.get_item(
+    TableName="Products",
+    Key={
+        "Id": {
+            "S": "1" 
+        }
+    }
+))
