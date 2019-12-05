@@ -1,6 +1,6 @@
 import boto3
 
-dynamo = boto3.client(
+dynamodb = boto3.client(
             'dynamodb', 
             region_name = 'eu-west-1', 
             aws_access_key_id = 'access_key', 
@@ -8,17 +8,18 @@ dynamo = boto3.client(
             endpoint_url = 'http://localstack:4569'
         )
 
-dynamo.create_table(
-    TableName="Test",
+dynamodb.create_table(
+    TableName="Products",
+    # Only need to define this as it is a key
     AttributeDefinitions=[
         {
-            'AttributeName': 'TestAttribute',
+            'AttributeName': 'Id',
             'AttributeType': 'S'
-        },
+        }
     ],
     KeySchema=[
         {
-            'AttributeName': 'TestAttribute',
+            'AttributeName': 'Id',
             'KeyType': 'HASH'
         },
     ],
@@ -29,4 +30,4 @@ dynamo.create_table(
     }
 )
 
-print(dynamo.list_tables())
+print(dynamodb.list_tables())
