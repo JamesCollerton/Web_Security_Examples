@@ -31,14 +31,29 @@ dynamodb.create_table(
     }
 )
 
-dynamodb.put_item(
-    TableName="Products",
-    Item={
+items = [
+    {
         "Id": {
             "S": "1" 
-        }
+        } 
+    },
+    {
+        "Id": {
+            "S": "2" 
+        } 
+    },
+    {
+        "Id": {
+            "S": "3" 
+        } 
     }
-)
+]
+
+for item in items:
+    dynamodb.put_item(
+        TableName="Products",
+        Item= item
+    )
 
 print(dynamodb.list_tables())
 print(dynamodb.get_item(
