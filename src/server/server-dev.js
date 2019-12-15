@@ -17,6 +17,14 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
+app.get('/items', (req, res, next) => {
+  res.set('content-type', 'application/json')
+  res.send({
+    "message": "Hello, world"
+  })
+  res.end()
+})
+
 app.get('*', (req, res, next) => {
   compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
     if (err) {
