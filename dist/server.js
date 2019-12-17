@@ -98,6 +98,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./src/server/config/aws-config.js":
+/*!*****************************************!*\
+  !*** ./src/server/config/aws-config.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconst config = {\n  localConfig: {\n    region: 'local',\n    endpoint: 'http://localhost:4569'\n  }\n};\nexports.default = config;\n\n//# sourceURL=webpack:///./src/server/config/aws-config.js?");
+
+/***/ }),
+
+/***/ "./src/server/config/data-config.js":
+/*!******************************************!*\
+  !*** ./src/server/config/data-config.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconst config = {\n  tableName: \"Products\"\n};\nexports.default = config;\n\n//# sourceURL=webpack:///./src/server/config/data-config.js?");
+
+/***/ }),
+
 /***/ "./src/server/routes/items-route.js":
 /*!******************************************!*\
   !*** ./src/server/routes/items-route.js ***!
@@ -106,7 +130,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _awsSdk = __webpack_require__(/*! aws-sdk */ \"aws-sdk\");\n\nvar _awsSdk2 = _interopRequireDefault(_awsSdk);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst router = _express2.default.Router();\n\nrouter.get('/', function (req, res, next) {\n  _awsSdk2.default.config.update({\n    region: 'local',\n    endpoint: 'http://localhost:4569'\n  });\n\n  const docClient = new _awsSdk2.default.DynamoDB.DocumentClient();\n  const params = {\n    TableName: \"Products\"\n  };\n  res.set('content-type', 'application/json');\n  docClient.scan(params, function (err, data) {\n    if (err) {\n      res.send({\n        success: false,\n        message: 'Error: Server error'\n      });\n    } else {\n      const {\n        Items\n      } = data;\n      res.send({\n        success: true,\n        message: 'Loaded fruits',\n        products: Items\n      });\n    }\n  }); // res.set('content-type', 'application/json')\n  // res.send({\n  //   \"message\": \"Hello, world\"\n  // })\n  // res.end()\n});\nexports.default = router;\n\n//# sourceURL=webpack:///./src/server/routes/items-route.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _awsSdk = __webpack_require__(/*! aws-sdk */ \"aws-sdk\");\n\nvar _awsSdk2 = _interopRequireDefault(_awsSdk);\n\nvar _awsConfig = __webpack_require__(/*! ../config/aws-config */ \"./src/server/config/aws-config.js\");\n\nvar _awsConfig2 = _interopRequireDefault(_awsConfig);\n\nvar _dataConfig = __webpack_require__(/*! ../config/data-config */ \"./src/server/config/data-config.js\");\n\nvar _dataConfig2 = _interopRequireDefault(_dataConfig);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst router = _express2.default.Router();\n\nrouter.get('/', function (req, res, next) {\n  _awsSdk2.default.config.update(_awsConfig2.default.localConfig);\n\n  const docClient = new _awsSdk2.default.DynamoDB.DocumentClient();\n  const params = {\n    TableName: _dataConfig2.default.tableName\n  };\n  res.set('content-type', 'application/json');\n  docClient.scan(params, function (err, data) {\n    if (err) {\n      res.send({\n        success: false,\n        message: 'Error: Server error'\n      });\n    } else {\n      const {\n        Items\n      } = data;\n      res.send({\n        success: true,\n        message: 'Loaded products',\n        products: Items\n      });\n    }\n  });\n});\nexports.default = router;\n\n//# sourceURL=webpack:///./src/server/routes/items-route.js?");
 
 /***/ }),
 

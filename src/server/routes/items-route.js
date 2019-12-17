@@ -1,20 +1,17 @@
 import express from 'express'
 import AWS from 'aws-sdk'
+import awsConfig from '../config/aws-config'
+import dataConfig from '../config/data-config'
 
 const router = express.Router();
 
 router.get('/', function(req, res, next) {
-    AWS.config.update(
-      {
-        region: 'local',
-        endpoint: 'http://localhost:4569'
-      }
-    )
+    AWS.config.update(awsConfig.localConfig)
 
     const docClient = new AWS.DynamoDB.DocumentClient();
 
     const params = {
-      TableName: "Products"
+      TableName: dataConfig.tableName
     };
 
     res.set('content-type', 'application/json')
@@ -29,16 +26,12 @@ router.get('/', function(req, res, next) {
         const { Items } = data;
         res.send({
           success: true,
-          message: 'Loaded fruits',
+          message: 'Loaded products',
           products: Items
         });
       }
     });
-    // res.set('content-type', 'application/json')
-    // res.send({
-    //   "message": "Hello, world"
-    // })
-    // res.end()
+
 });
 
 export default router
