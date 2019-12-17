@@ -1,7 +1,7 @@
 {
-  "name": "react_drag_and_drop",
+  "name": "web_security_example",
   "version": "1.0.0",
-  "description": "A small example application of using drag and drop in React",
+  "description": "A small example application used to demonstrate various security vulnerabilities",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/JamesCollerton/React_Drag_and_Drop#readme",
   "dependencies": {
     "@babel/runtime": "^7.6.2",
+    "aws-sdk": "^2.591.0",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
