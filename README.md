@@ -16,6 +16,8 @@ At the moment this is just an outline application. The below explanation is quit
 - [Mini CSS](https://minicss.org/) - Minimises CSS in the production compilation
 - [Uglify JS](https://www.npmjs.com/package/uglify-js) - Optimises JS in the production compilation
 - [Webpack](https://webpack.js.org/) - Controls the compilation of the various files
+- [Localstack](https://hub.docker.com/r/localstack/localstack/) - Used to host the local DynamoDb instance
+- [Docker](https://www.docker.com/) - Contains the localstack instance
 
 ## Functionality Overview
 
@@ -33,7 +35,13 @@ or
 npm run buildProd
 ```
 
-Both of these builds will build into the `dist` folder and so we can run both in the same way using
+Both of these builds will build into the `dist` folder. Once our application is running we need to run the DynamoDb instance in the `dev-infrastructure` folder using
+
+```
+docker-compose up
+```
+
+Once this is running we can run the application using
 
 ```
 npm start

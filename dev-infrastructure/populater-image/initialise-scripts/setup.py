@@ -55,12 +55,15 @@ for item in items:
         Item= item
     )
 
-print(dynamodb.list_tables())
-print(dynamodb.get_item(
-    TableName="Products",
-    Key={
-        "Id": {
-            "S": "1" 
-        }
-    }
-))
+# This can be put back in in order to confirm the items have been successfully
+# written to DynamoDb
+
+# print(dynamodb.list_tables())
+# print(dynamodb.get_item(
+#     TableName="Products",
+#     Key={
+#         "Id": {
+#             "S": "1" 
+#         }
+#     }
+# ))
