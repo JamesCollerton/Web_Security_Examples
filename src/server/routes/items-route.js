@@ -5,14 +5,15 @@ import dataConfig from '../config/data-config'
 
 const router = express.Router();
 
+AWS.config.update(awsConfig.localConfig)
+
+const docClient = new AWS.DynamoDB.DocumentClient();
+
+const params = {
+  TableName: dataConfig.tableName
+};
+
 router.get('/', function(req, res, next) {
-    AWS.config.update(awsConfig.localConfig)
-
-    const docClient = new AWS.DynamoDB.DocumentClient();
-
-    const params = {
-      TableName: dataConfig.tableName
-    };
 
     res.set('content-type', 'application/json')
 
