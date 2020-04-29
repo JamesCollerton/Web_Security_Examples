@@ -4,7 +4,7 @@ import PageBody from './PageBody'
 
 const App = () => {
 
-  // Set state as the most top level component.
+  // Set state as the most top level component. This needs to be altered to be an API call
   const [items, setItems] = React.useState([
     {
       name: "Item One",

@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "aee1846531341c07aaec";
+/******/ 	var hotCurrentHash = "8250fc1ca8c3829a6689";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42849,20 +42849,53 @@ var _PageBody2 = _interopRequireDefault(_PageBody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
-  // Set state
+  // Set state as the most top level component. This needs to be altered to be an API call
   const [items, setItems] = _react2.default.useState([{
     name: "Item One",
+    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+  }, {
+    name: "Item Two",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
   }]);
 
   return _react2.default.createElement("div", {
     className: "content"
-  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, {
-    items: items
-  }));
+  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, items));
 };
 
 exports.default = App;
+
+/***/ }),
+
+/***/ "./src/js/components/Item.js":
+/*!***********************************!*\
+  !*** ./src/js/components/Item.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Item = ({
+  item
+}) => {
+  return _react2.default.createElement("h1", {
+    className: "display-4"
+  }, item.name);
+};
+
+exports.default = Item;
 
 /***/ }),
 
@@ -42976,6 +43009,10 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Item = __webpack_require__(/*! ./Item */ "./src/js/components/Item.js");
+
+var _Item2 = _interopRequireDefault(_Item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const PageContents = ({
@@ -42984,9 +43021,10 @@ const PageContents = ({
   return _react2.default.createElement("div", {
     className: "container"
   }, items.map((item, i) => {
-    return _react2.default.createElement("h1", {
-      className: "display-4"
-    }, "item.title");
+    return _react2.default.createElement(_Item2.default, {
+      key: `id${i}`,
+      item: item
+    });
   }));
 };
 
