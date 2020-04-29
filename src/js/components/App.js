@@ -1,11 +1,27 @@
 import React from 'react'
 import NavBar from './NavBar'
+import PageBody from './PageBody'
 
 const App = () => {
+
+  // Set state as the most top level component.
+  const [items, setItems] = React.useState([
+    {
+      name: "Item One",
+      image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+    },
+    {
+      name: "Item Two",
+      image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+    }
+  ]);
+
   return (
     <div className="content">
-        <NavBar />
+      <NavBar />
+      <PageBody items={items} />
     </div>
   )
 }
+
 export default App

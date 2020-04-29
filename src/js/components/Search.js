@@ -1,7 +1,7 @@
 import React from 'react'
 
 /*
-    Note, this is a class based component and should probably be changed to a functional
+    TODO: this is a class based component and should probably be changed to a functional
     component
 */
 class Search extends React.Component {

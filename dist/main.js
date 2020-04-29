@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8d508cee97e9875f7cfd";
+/******/ 	var hotCurrentHash = "aee1846531341c07aaec";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42842,12 +42842,24 @@ var _NavBar = __webpack_require__(/*! ./NavBar */ "./src/js/components/NavBar.js
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
+var _PageBody = __webpack_require__(/*! ./PageBody */ "./src/js/components/PageBody.js");
+
+var _PageBody2 = _interopRequireDefault(_PageBody);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
+  // Set state
+  const [items, setItems] = _react2.default.useState([{
+    name: "Item One",
+    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+  }]);
+
   return _react2.default.createElement("div", {
     className: "content"
-  }, _react2.default.createElement(_NavBar2.default, null));
+  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, {
+    items: items
+  }));
 };
 
 exports.default = App;
@@ -42906,6 +42918,120 @@ exports.default = NavBar;
 
 /***/ }),
 
+/***/ "./src/js/components/PageBody.js":
+/*!***************************************!*\
+  !*** ./src/js/components/PageBody.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _PageHeader = __webpack_require__(/*! ./PageHeader */ "./src/js/components/PageHeader.js");
+
+var _PageHeader2 = _interopRequireDefault(_PageHeader);
+
+var _PageContents = __webpack_require__(/*! ./PageContents */ "./src/js/components/PageContents.js");
+
+var _PageContents2 = _interopRequireDefault(_PageContents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const PageBody = ({
+  items
+}) => {
+  return _react2.default.createElement(_react2.default.Fragment, null, _react2.default.createElement(_PageHeader2.default, null), _react2.default.createElement(_PageContents2.default, {
+    items: items
+  }));
+};
+
+exports.default = PageBody;
+
+/***/ }),
+
+/***/ "./src/js/components/PageContents.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/PageContents.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const PageContents = ({
+  items
+}) => {
+  return _react2.default.createElement("div", {
+    className: "container"
+  }, items.map((item, i) => {
+    return _react2.default.createElement("h1", {
+      className: "display-4"
+    }, "item.title");
+  }));
+};
+
+exports.default = PageContents;
+
+/***/ }),
+
+/***/ "./src/js/components/PageHeader.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/PageHeader.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const PageHeader = () => {
+  return _react2.default.createElement("div", {
+    className: "container"
+  }, _react2.default.createElement("div", {
+    className: "jumbotron"
+  }, _react2.default.createElement("h1", {
+    className: "display-4"
+  }, "Art Bazaar"), _react2.default.createElement("p", {
+    className: "lead"
+  }, "A one stop shop for all of your art needs"), _react2.default.createElement("hr", {
+    className: "my-4"
+  }), _react2.default.createElement("p", null, "Browse available pieces below")));
+};
+
+exports.default = PageHeader;
+
+/***/ }),
+
 /***/ "./src/js/components/Search.js":
 /*!*************************************!*\
   !*** ./src/js/components/Search.js ***!
@@ -42926,6 +43052,10 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+    TODO: this is a class based component and should probably be changed to a functional
+    component
+*/
 class Search extends _react2.default.Component {
   constructor(props) {
     super(props);
