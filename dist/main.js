@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8250fc1ca8c3829a6689";
+/******/ 	var hotCurrentHash = "fa4f32337070587edccb";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42860,7 +42860,9 @@ const App = () => {
 
   return _react2.default.createElement("div", {
     className: "content"
-  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, items));
+  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, {
+    items: items
+  }));
 };
 
 exports.default = App;
@@ -42979,6 +42981,13 @@ var _PageContents2 = _interopRequireDefault(_PageContents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+    Quick note on how this works.
+
+    When we pass things in to the top level as <PageBody items={items}/> this is then
+    fed into this function as an object called props. By doing the curly brackets we 
+    dereference the object into its constituent parts, therefore creating items again.
+*/
 const PageBody = ({
   items
 }) => {

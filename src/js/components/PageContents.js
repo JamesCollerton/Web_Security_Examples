@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import PropTypes from 'prop-types'
 
 const PageContents = ({ items }) => {
     return (
@@ -14,5 +15,9 @@ const PageContents = ({ items }) => {
         </div>
     )
 }
+
+PageContents.propTypes = {
+    items: PropTypes.array
+};
 
 export default PageContents
