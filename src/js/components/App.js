@@ -16,6 +16,8 @@ const App = () => {
     }
   ]);
 
+  // Need to use axios and setItems to set the items in the array
+
   return (
     <div className="content">
       <NavBar />
