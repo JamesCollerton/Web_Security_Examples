@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d85718fa9bc4de3435a7";
+/******/ 	var hotCurrentHash = "2d5b8772731b521d630e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43736,11 +43736,16 @@ var _PageBody = __webpack_require__(/*! ./PageBody */ "./src/js/components/PageB
 
 var _PageBody2 = _interopRequireDefault(_PageBody);
 
+var _ItemRequests = __webpack_require__(/*! ../requests/ItemRequests */ "./src/js/requests/ItemRequests.js");
+
+var _ItemRequests2 = _interopRequireDefault(_ItemRequests);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
-  // Set state as the most top level component. This needs to be altered to be an API call
+  const requestItems = (0, _ItemRequests2.default)(); // Set state as the most top level component. This needs to be altered to be an API call
   // const [items, setItems] = React.useState([
+
   const items = _react2.default.useState([{
     name: "Item One",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
@@ -44063,6 +44068,34 @@ class Search extends _react2.default.Component {
 }
 
 exports.default = Search;
+
+/***/ }),
+
+/***/ "./src/js/requests/ItemRequests.js":
+/*!*****************************************!*\
+  !*** ./src/js/requests/ItemRequests.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const getItems = function () {
+  return [{
+    name: "Item One",
+    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+  }, {
+    name: "Item Two",
+    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+  }];
+};
+
+exports.getItems = getItems;
 
 /***/ }),
 
