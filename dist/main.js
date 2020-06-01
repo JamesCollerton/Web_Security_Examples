@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "2d5b8772731b521d630e";
+/******/ 	var hotCurrentHash = "8bbc53f53a61d0e4a2ef";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43738,22 +43738,13 @@ var _PageBody2 = _interopRequireDefault(_PageBody);
 
 var _ItemRequests = __webpack_require__(/*! ../requests/ItemRequests */ "./src/js/requests/ItemRequests.js");
 
-var _ItemRequests2 = _interopRequireDefault(_ItemRequests);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
-  const requestItems = (0, _ItemRequests2.default)(); // Set state as the most top level component. This needs to be altered to be an API call
+  const requestItems = (0, _ItemRequests.getItems)(); // Set state as the most top level component. This needs to be altered to be an API call
   // const [items, setItems] = React.useState([
 
-  const items = _react2.default.useState([{
-    name: "Item One",
-    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
-  }, {
-    name: "Item Two",
-    image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
-  }])[0]; // Need to use axios and setItems to set the items in the array
-
+  const items = _react2.default.useState(requestItems)[0];
 
   return _react2.default.createElement("div", {
     className: "content"
@@ -43793,9 +43784,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const Item = ({
   item
 }) => {
-  return _react2.default.createElement("h1", {
-    className: "display-4"
-  }, item.name);
+  return (// <h1 className="display-4">{item.name}</h1>
+    _react2.default.createElement("div", {
+      class: "card",
+      style: "width: 18rem;"
+    }, _react2.default.createElement("img", {
+      class: "card-img-top",
+      src: "...",
+      alt: "Card image cap"
+    }), _react2.default.createElement("div", {
+      class: "card-body"
+    }, _react2.default.createElement("h5", {
+      class: "card-title"
+    }, "Card title"), _react2.default.createElement("p", {
+      class: "card-text"
+    }, "Some quick example text to build on the card title and make up the bulk of the card's content."), _react2.default.createElement("a", {
+      href: "#",
+      class: "btn btn-primary"
+    }, "Go somewhere")))
+  );
 };
 
 Item.propTypes = {
@@ -44085,6 +44092,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+// Need to use axios and setItems to set the items in the array
 const getItems = function () {
   return [{
     name: "Item One",
