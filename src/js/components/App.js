@@ -22,12 +22,12 @@ class App extends Component {
           isLoaded: true
         })
       })
-      .catch(function (error) {
-        // handle error
-      })
-      .then(function () {
-        // always executed
-      });
+      // .catch(function (error) {
+      //   // handle error
+      // })
+      // .then(function () {
+      //   // always executed
+      // });
   }
 
   componentDidMount() {
