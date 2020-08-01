@@ -7,8 +7,13 @@ const App = () => {
 
   const requestItems = getItems()
 
-  // Set state as the most top level component. This needs to be altered to be an API call
-  // const [items, setItems] = React.useState([
+  /*
+    I think the way this works is that if I change the state of the program then this 
+    will filter the whole way down via the props.
+    
+    Set state as the most top level component. This needs to be altered to be an API call
+    const [items, setItems] = React.useState([
+  */
   const items = React.useState(requestItems)[0];
 
   return (

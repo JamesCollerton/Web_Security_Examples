@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8bbc53f53a61d0e4a2ef";
+/******/ 	var hotCurrentHash = "6c975d99bbae725493bd";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43741,8 +43741,14 @@ var _ItemRequests = __webpack_require__(/*! ../requests/ItemRequests */ "./src/j
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
-  const requestItems = (0, _ItemRequests.getItems)(); // Set state as the most top level component. This needs to be altered to be an API call
-  // const [items, setItems] = React.useState([
+  const requestItems = (0, _ItemRequests.getItems)();
+  /*
+    I think the way this works is that if I change the state of the program then this 
+    will filter the whole way down via the props.
+    
+    Set state as the most top level component. This needs to be altered to be an API call
+    const [items, setItems] = React.useState([
+  */
 
   const items = _react2.default.useState(requestItems)[0];
 
@@ -43786,21 +43792,18 @@ const Item = ({
 }) => {
   return (// <h1 className="display-4">{item.name}</h1>
     _react2.default.createElement("div", {
-      class: "card",
-      style: "width: 18rem;"
-    }, _react2.default.createElement("img", {
-      class: "card-img-top",
-      src: "...",
-      alt: "Card image cap"
-    }), _react2.default.createElement("div", {
-      class: "card-body"
+      className: "card"
+    }, _react2.default.createElement("div", {
+      className: "card-body"
     }, _react2.default.createElement("h5", {
-      class: "card-title"
-    }, "Card title"), _react2.default.createElement("p", {
-      class: "card-text"
-    }, "Some quick example text to build on the card title and make up the bulk of the card's content."), _react2.default.createElement("a", {
+      className: "card-title"
+    }, item.name), _react2.default.createElement("p", {
+      className: "card-text"
+    }, "Some quick example text to build on the card title and make up the bulk of the content."), _react2.default.createElement("a", {
+      href: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
+    }), _react2.default.createElement("a", {
       href: "#",
-      class: "btn btn-primary"
+      className: "btn btn-primary"
     }, "Go somewhere")))
   );
 };
@@ -43960,6 +43963,12 @@ const PageContents = ({
     });
   }));
 };
+/*
+    This is an example of propTypes, where we check the type of an object coming 
+    in. They only work in developer mode but you can use something similar like sinon
+    to get things working in production.
+*/
+
 
 PageContents.propTypes = {
   items: _propTypes2.default.array

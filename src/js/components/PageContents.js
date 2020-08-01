@@ -16,6 +16,11 @@ const PageContents = ({ items }) => {
     )
 }
 
+/*
+    This is an example of propTypes, where we check the type of an object coming 
+    in. They only work in developer mode but you can use something similar like sinon
+    to get things working in production.
+*/
 PageContents.propTypes = {
     items: PropTypes.array
 };
