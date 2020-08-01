@@ -5,6 +5,6 @@ import App from '../App'
 describe('<App />', () => {
   test('contains a NavBar', () => {
     const wrapper = shallow(<App />);
-    // expect(wrapper.find('NavBar')).toHaveLength(1)
+    expect(wrapper.find('div')).toHaveLength(1)
   });
 })
