@@ -35,17 +35,44 @@ items = [
     {
         "Id": {
             "S": "1" 
-        } 
+        },
+        "name": {
+            "S": "Item One"
+        },
+        "description": {
+            "S": "This is the first item in the art gallery."
+        },
+        "image": {
+            "S": "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg" 
+        }
     },
     {
         "Id": {
             "S": "2" 
-        } 
+        },
+        "name": {
+            "S": "Item Two"
+        },
+        "description": {
+            "S": "This is the second item in the art gallery."
+        },
+        "image": {
+            "S": "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg" 
+        }
     },
     {
         "Id": {
             "S": "3" 
-        } 
+        },
+        "name": {
+            "S": "Item Three"
+        },
+        "description": {
+            "S": "This is the third item in the art gallery."
+        },
+        "image": {
+            "S": "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg" 
+        }
     }
 ]
 

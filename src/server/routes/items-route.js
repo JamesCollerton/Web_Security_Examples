@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
         res.send({
           success: true,
           message: 'Loaded products',
-          products: Items
+          items: Items
         });
       }
     });
