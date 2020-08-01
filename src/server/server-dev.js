@@ -13,13 +13,13 @@ import itemsRoute from './routes/items-route'
 const app = express(),
   DIST_DIR = __dirname,
   HTML_FILE = path.join(DIST_DIR, 'index.html'),
-  compiler = webpack(config)
+  compiler = webpack(config())
 
 /*
   Middlewares
 */
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  publicPath: config().output.publicPath
 }))
 
 app.use(webpackHotMiddleware(compiler))

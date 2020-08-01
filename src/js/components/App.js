@@ -5,6 +5,8 @@ import {getItems} from '../requests/ItemRequests'
 
 const App = () => {
 
+  // console.log("Hello")
+
   const requestItems = getItems()
 
   /*
@@ -18,6 +20,7 @@ const App = () => {
 
   return (
     <div className="content">
+      <p>API {process.env.GET_ITEMS_ENDPOINT}</p>
       <NavBar />
       <PageBody items={items} />
     </div>

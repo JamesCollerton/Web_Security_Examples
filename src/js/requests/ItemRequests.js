@@ -1,6 +1,9 @@
 // Need to use axios and setItems to set the items in the array
 
 const getItems = function () {
+
+    console.log(process.env.GET_ITEMS_ENDPOINT)
+
     return [
         {
           name: "Item One",

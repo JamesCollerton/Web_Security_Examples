@@ -1,11 +1,14 @@
 const path = require('path')
-// const webpack = require('webpack')
+const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
+const dotenv = require('dotenv');
 
 module.exports = (env, argv) => {
+
     const SERVER_PATH = (argv.mode === 'production') ?
         './src/server/server-prod.js' :
         './src/server/server-dev.js'
+
     return ({
         entry: {
             server: SERVER_PATH,

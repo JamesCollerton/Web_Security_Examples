@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fb42b4f71c7ea984c8f9";
+/******/ 	var hotCurrentHash = "32b896378b338a5fb125";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43741,6 +43741,7 @@ var _ItemRequests = __webpack_require__(/*! ../requests/ItemRequests */ "./src/j
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const App = () => {
+  // console.log("Hello")
   const requestItems = (0, _ItemRequests.getItems)();
   /*
     I think the way this works is that if I change the state of the program then this 
@@ -43754,7 +43755,7 @@ const App = () => {
 
   return _react2.default.createElement("div", {
     className: "content"
-  }, _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, {
+  }, _react2.default.createElement("p", null, "API ", "http://localhost:3000"), _react2.default.createElement(_NavBar2.default, null), _react2.default.createElement(_PageBody2.default, {
     items: items
   }));
 };
@@ -43799,7 +43800,7 @@ const Item = ({
       className: "card-title"
     }, item.name), _react2.default.createElement("p", {
       className: "card-text"
-    }, "Some quick example text to build on the card title and make up the bulk of the content."), _react2.default.createElement("img", {
+    }, item.description), _react2.default.createElement("img", {
       className: "card-art-image",
       src: item.image,
       alt: "Art image"
@@ -44112,7 +44113,8 @@ const getItems = function () {
     description: "This is the first item in the art gallery.",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
   }, {
-    name: "This is the second item in the art gallery.",
+    name: "Item Two",
+    description: "This is the second item in the art gallery.",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
   }];
 };
