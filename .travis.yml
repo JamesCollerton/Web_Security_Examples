@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - 12.2.0
 script:
+    - mv .env-dev .env
     - npm run lint
     - npm run buildDev
     - npm run buildProd
