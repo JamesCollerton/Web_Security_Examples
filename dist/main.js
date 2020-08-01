@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d2d5b4348bf2df9543f5";
+/******/ 	var hotCurrentHash = "7080275c5fb4d94e2f21";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -45748,30 +45748,33 @@ var _ItemRequests = __webpack_require__(/*! ../requests/ItemRequests */ "./src/j
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class App extends Component {
+class App extends _react.Component {
   constructor(props) {
     super(props);
     this.state = {
       items: [],
       isLoaded: false
     };
-  } // const [items, setItems] = React.useState([]);
+  }
 
-
-  getItemsFunction() {
+  getItemsFunction(appObject) {
     (0, _ItemRequests.getItems)().then(function (response) {
       // handle success
-      console.log(response.data.items); // setItems(response.data)
+      appObject.setState({
+        items: response.data.items,
+        isLoaded: true
+      });
+    }); // .catch(function (error) {
+    //   // handle error
+    // })
+    // .then(function () {
+    //   // always executed
+    // });
+  }
 
-      return response.data.items;
-    }).catch(function (error) {
-      // handle error
-      console.log(error);
-      return [];
-    }).then(function () {// always executed
-    });
-  } // console.log(requestItems)
-
+  componentDidMount() {
+    this.getItemsFunction(this);
+  }
   /*
     I think the way this works is that if I change the state of the program then this 
     will filter the whole way down via the props.
@@ -46152,32 +46155,7 @@ const axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 // Need to use axios and setItems to set the items in the array
 const getItems = function () {
-  return axios.get(_config2.default.getItemsEndpoint); // .then(function (response) {
-  //   // handle success
-  //   console.log(response.data);
-  //   setItems(response.data)
-  //   return(response.data)
-  // })
-  // .catch(function (error) {
-  //   // handle error
-  //   console.log(error);
-  //   return[]
-  // })
-  // .then(function () {
-  //   // always executed
-  // });
-  // return [
-  //   {
-  //     name: "Item One",
-  //     description: "This is the first item in the art gallery.",
-  //     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
-  //   },
-  //   {
-  //     name: "Item Two",
-  //     description: "This is the second item in the art gallery.",
-  //     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
-  //   }
-  // ]
+  return axios.get(_config2.default.getItemsEndpoint);
 };
 
 exports.getItems = getItems;
