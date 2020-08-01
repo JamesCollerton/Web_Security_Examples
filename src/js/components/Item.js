@@ -8,8 +8,8 @@ const Item = ({ item }) => {
             {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
             <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the content.</p>
-                <img className="card-art-image" src="https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg" alt="Art image"/>
+                <p className="card-text">{item.description}</p>
+                <img className="card-art-image" src={item.image} alt="Art image"/>
                 <br/><br/>
                 <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
@@ -19,7 +19,9 @@ const Item = ({ item }) => {
 
 Item.propTypes = {
     item: PropTypes.shape({
-        name: PropTypes.string
+        name: PropTypes.string,
+        description: PropTypes.string,
+        image: PropTypes.string
     })
 };
 

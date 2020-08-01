@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6c975d99bbae725493bd";
+/******/ 	var hotCurrentHash = "fb42b4f71c7ea984c8f9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1072,7 +1072,7 @@ exports.push([module.i, "/*!\n * Bootstrap v4.3.1 (https://getbootstrap.com/)\n 
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "h1, h2, h3, h4, h5, p {\n  font-family: helvetica;\n  color: #3e3e3e;\n}\n\n.description {\n  font-size: 14px;\n  color: #9e9e9e;\n}\n", ""]);
+exports.push([module.i, "h1, h2, h3, h4, h5, p {\n  font-family: helvetica;\n  color: #3e3e3e;\n}\n\n.description {\n  font-size: 14px;\n  color: #9e9e9e;\n}\n\n.card-art-image {\n  width: 200px;\n}\n", ""]);
 
 
 /***/ }),
@@ -43799,9 +43799,11 @@ const Item = ({
       className: "card-title"
     }, item.name), _react2.default.createElement("p", {
       className: "card-text"
-    }, "Some quick example text to build on the card title and make up the bulk of the content."), _react2.default.createElement("a", {
-      href: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
-    }), _react2.default.createElement("a", {
+    }, "Some quick example text to build on the card title and make up the bulk of the content."), _react2.default.createElement("img", {
+      className: "card-art-image",
+      src: item.image,
+      alt: "Art image"
+    }), _react2.default.createElement("br", null), _react2.default.createElement("br", null), _react2.default.createElement("a", {
       href: "#",
       className: "btn btn-primary"
     }, "Go somewhere")))
@@ -43810,7 +43812,9 @@ const Item = ({
 
 Item.propTypes = {
   item: _propTypes2.default.shape({
-    name: _propTypes2.default.string
+    name: _propTypes2.default.string,
+    description: _propTypes2.default.string,
+    image: _propTypes2.default.string
   })
 };
 exports.default = Item;
@@ -44105,9 +44109,10 @@ Object.defineProperty(exports, "__esModule", {
 const getItems = function () {
   return [{
     name: "Item One",
+    description: "This is the first item in the art gallery.",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
   }, {
-    name: "Item Two",
+    name: "This is the second item in the art gallery.",
     image: "https://news.artnet.com/app/news-upload/2019/12/5db820a075ba3.jpg"
   }];
 };
